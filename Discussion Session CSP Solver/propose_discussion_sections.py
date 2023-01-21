@@ -2,6 +2,8 @@
 
 import os
 import csv
+import functools
+from datetime import datetime
 from typing import Dict, List, Tuple
 
 from matplotlib import pyplot as plt
@@ -135,22 +137,48 @@ for facilitator_name in facilitator_names:
     for time, count in time_counts.items():
         print(f'{facilitator_name} - {time}: {count}')
 
-# Get a set of all the candidate times
-all_times = set()
-for _, times in facilitator_solution_times:
+# Extract unique times from all facilitators' times lists
+unique_times = set()
+for facilitator, times in facilitator_solution_times:
     for time in times:
-        all_times.add(time)
+        unique_times.add(time)
+
+# A custom comparison function. Expects times formatted like 'M 3:00-4:20 PM'
+def compare_times(t1, t2):
+    # Extract day, starting time, and AM/PM from the time string
+    day1, time1, ampm1 = t1.split()
+    day2, time2, ampm2 = t2.split()
+    start_time1, _ = time1.split("-")
+    start_time2, _ = time2.split("-")
+    #Converting times in 24 hours format
+    start_time1 = datetime.strptime(start_time1+ampm1,"%I:%M%p").strftime("%H:%M")
+    start_time2 = datetime.strptime(start_time2+ampm2,"%I:%M%p").strftime("%H:%M")
+    # Creating dict of days and their numerical value
+    days = {'M':1, 'Tu':2, 'W':3, 'Th':4, 'F':5, 'Sa':6, 'Su':7}
+    if days[day1] != days[day2]:
+        return days[day1]-days[day2]
+    else:
+        if start_time1 != start_time2:
+            return -1 if start_time1 < start_time2 else 1
+        else:
+            return 0
+
+# Convert times to datetime objects and sort by date and time.
+unique_times = sorted(unique_times, key=functools.cmp_to_key(compare_times))
 
 # Plot a histogram of the times that most often occured
 # in the solutions. Shows the graphs at the same time.
 # Reduce the font of everything
 plt.rcParams.update({'font.size': 6})
 
+# Plot histograms for each facilitator
 fig, ax = plt.subplots(nrows=len(facilitator_solution_times), ncols=1, sharey=True, sharex=True)
 for i, (facilitator_name, times) in enumerate(facilitator_solution_times):
-    # Use all_times as the x axis so that the bins are the same for each graph 
-    # and the x axis is the same for each graph
-    ax[i].hist(times, bins=len(all_times), label=facilitator_name)
+    # Count occurrences of each time in facilitator's times list
+    time_counts = {time: times.count(time) for time in unique_times}
+
+    # Plot histogram
+    ax[i].hist(list(time_counts.keys()), weights=list(time_counts.values()), label=facilitator_name)
     ax[i].set_title(facilitator_name)
     ax[i].set_ylabel('Count')
     ax[i].set_xlabel('Time')
@@ -163,7 +191,7 @@ fig.suptitle('Facilitator Times')
 fig.align_xlabels()
 
 # Make sure there is an x-label for every bin
-plt.xticks(rotation=15, horizontalalignment='right')
+plt.xticks(list(unique_times), rotation=15, horizontalalignment='right')
 
 # Add margins to the bottom to show the labels
 plt.subplots_adjust(bottom=0.2)
