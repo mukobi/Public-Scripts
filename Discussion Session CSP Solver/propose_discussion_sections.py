@@ -20,9 +20,9 @@ from tqdm import tqdm
 
 # Constants
 # Groups with fewer than this number of students are invalid.
-MIN_GROUP_SIZE = 2
+MIN_GROUP_SIZE = 4
 # Filter the students to remove students with too much availability to make the problem easier.
-MAX_STUDENT_AVAILABILITY = 6
+MAX_STUDENT_AVAILABILITY = 10
 # How often we expect a solution to be found, based on the number of solutions found so far. Only used for printing progress.
 EST_SOLUTION_DENSITY = 8364 / 22617340087890625000
 
