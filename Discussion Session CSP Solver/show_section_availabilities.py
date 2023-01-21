@@ -6,12 +6,12 @@ iterate over each student and print which facilitator groups they can make.
 
 import csv
 
-# Constants
-INPUT_FILE = './SAIA Class Scheduling-STS 20SI All.csv'
+# Find whatever CSV file is in the local folder using list comprehension 
+INPUT_FILE = [f for f in os.listdir('.') if f.endswith('.csv')][0]
 
 # Set facilitator times
 facilitator_locked_in_times = {
-    'Scott Viteri': 'W 3:00-4:20 PM',
+    'Aaron Scher 1': 'W 3:00-4:20 PM',
     'Gabe Mukobi': 'M 4:30-5:50 PM',
 }
 
@@ -23,11 +23,14 @@ with open(INPUT_FILE, 'r') as f:
     for row in reader:
         name = row['Full Name']
         role = row['Are you a student or a facilitator?']
-        availability = set(row['Which of these 80-minute class times can you make weekly?'].split(','))
+        availability = set(row['Availability'].split(','))
         if role == 'Student':
             students.append((name, availability))
         elif role == 'Facilitator':
-            facilitators.append((name, availability))
+            # Duplicate the facilitator for each number of groups they can facilitate
+            num_groups = int(row['Chosen num sections'])
+            for i in range(num_groups):
+                facilitators.append((f'{name} {i+1}', availability))
         else:
             raise ValueError(role)
 
