@@ -1,5 +1,11 @@
-"""Propose discussion sections for SAIA Class Scheduling using a CSP solver."""
+"""
+Propose discussion sections for SAIA Class Scheduling using a CSP solver.
+The idea is that we find all the solutions and plot which times had the most solutions.
+Then, if you choose those times for the sections, you have more choice in the students.
+Rather idiosyncratic to SAIA's class scheduling form: https://airtable.com/shrl6KTTzPVNyLzmi
+"""
 
+import colorsys
 import os
 import csv
 import functools
@@ -16,12 +22,14 @@ from tqdm import tqdm
 # Groups with fewer than this number of students are invalid.
 MIN_GROUP_SIZE = 2
 # Filter the students to remove students with too much availability to make the problem easier.
-MAX_STUDENT_AVAILABILITY = 6  
+MAX_STUDENT_AVAILABILITY = 6
 # How often we expect a solution to be found, based on the number of solutions found so far. Only used for printing progress.
-EST_SOLUTION_DENSITY = 8364 / 22617340087890625000  
+EST_SOLUTION_DENSITY = 8364 / 22617340087890625000
+
+PRINT_SOLUTIONS = False
 
 
-# Find whatever CSV file is in the local folder using list comprehension 
+# Find whatever CSV file is in the local folder using list comprehension
 INPUT_FILE = [f for f in os.listdir('.') if f.endswith('.csv')][0]
 
 # Read in data
@@ -57,7 +65,7 @@ for facilitator in facilitators:
     possible_configurations *= len(availability)
 
 facilitator_names = [name for name, _ in facilitators]
-print(facilitator_names)
+print(f'Facilitators: {", ".join(facilitator_names)}')
 
 # Add variables: each student chooses a facilitator
 num_students_removed = 0
@@ -111,16 +119,17 @@ for solution in tqdm(problem.getSolutionIter(), total=est_num_solutions):
 
 print(f'Found {len(solutions)} solutions!')
 
-# Print solutions
-for i, solution in enumerate(solutions):
-    print(f'Solution {i + 1}:')
-    for student, time in solution.items():
-        print(f'{student}: {time}')
-    print()
-    if i + 1 >= 2:
-        break
+if PRINT_SOLUTIONS:
+    # Print solutions
+    for i, solution in enumerate(solutions):
+        print(f'Solution {i + 1}:')
+        for student, time in solution.items():
+            print(f'{student}: {time}')
+        print()
+        if i + 1 >= 2:
+            break
 
-print('No more solutions found.')
+    print('No more solutions found.')
 
 # For each facilitator, get the times from all the solutions.
 facilitator_solution_times = []
@@ -142,19 +151,22 @@ unique_times = set()
 for facilitator, times in facilitator_solution_times:
     for time in times:
         unique_times.add(time)
+unique_times = list(unique_times)
 
 # A custom comparison function. Expects times formatted like 'M 3:00-4:20 PM'
+
+
 def compare_times(t1, t2):
     # Extract day, starting time, and AM/PM from the time string
     day1, time1, ampm1 = t1.split()
     day2, time2, ampm2 = t2.split()
     start_time1, _ = time1.split("-")
     start_time2, _ = time2.split("-")
-    #Converting times in 24 hours format
-    start_time1 = datetime.strptime(start_time1+ampm1,"%I:%M%p").strftime("%H:%M")
-    start_time2 = datetime.strptime(start_time2+ampm2,"%I:%M%p").strftime("%H:%M")
+    # Converting times in 24 hours format
+    start_time1 = datetime.strptime(start_time1+ampm1, "%I:%M%p").strftime("%H:%M")
+    start_time2 = datetime.strptime(start_time2+ampm2, "%I:%M%p").strftime("%H:%M")
     # Creating dict of days and their numerical value
-    days = {'M':1, 'Tu':2, 'W':3, 'Th':4, 'F':5, 'Sa':6, 'Su':7}
+    days = {'M': 1, 'Tu': 2, 'W': 3, 'Th': 4, 'F': 5, 'Sa': 6, 'Su': 7}
     if days[day1] != days[day2]:
         return days[day1]-days[day2]
     else:
@@ -163,13 +175,15 @@ def compare_times(t1, t2):
         else:
             return 0
 
+
 # Convert times to datetime objects and sort by date and time.
 unique_times = sorted(unique_times, key=functools.cmp_to_key(compare_times))
 
 # Plot a histogram of the times that most often occured
 # in the solutions. Shows the graphs at the same time.
+
 # Reduce the font of everything
-plt.rcParams.update({'font.size': 6})
+plt.rcParams.update({'font.size': 7, 'figure.figsize': (10, 10)})
 
 # Plot histograms for each facilitator
 fig, ax = plt.subplots(nrows=len(facilitator_solution_times), ncols=1, sharey=True, sharex=True)
@@ -177,26 +191,26 @@ for i, (facilitator_name, times) in enumerate(facilitator_solution_times):
     # Count occurrences of each time in facilitator's times list
     time_counts = {time: times.count(time) for time in unique_times}
 
-    # Plot histogram
-    ax[i].hist(list(time_counts.keys()), weights=list(time_counts.values()), label=facilitator_name)
-    ax[i].set_title(facilitator_name)
+    # Plot a bar for each time
+    ax[i].bar(list(time_counts.keys()), list(time_counts.values()), label=facilitator_name,
+              width=0.95, align='center', edgecolor='black', linewidth=0.5, color='#444')
+    # Color this plot with a hue based on i
+    ax[i].set_facecolor(colorsys.hsv_to_rgb(i / len(facilitator_solution_times), 0.28, 0.93))
     ax[i].set_ylabel('Count')
-    ax[i].set_xlabel('Time')
     ax[i].legend()
+    ax[i].grid()
 
-# adjust the spacing between subplots
-fig.subplots_adjust(hspace=1.0)
-
-fig.suptitle('Facilitator Times')
-fig.align_xlabels()
 
 # Make sure there is an x-label for every bin
-plt.xticks(list(unique_times), rotation=15, horizontalalignment='right')
+fig.align_xlabels()
+plt.xticks(unique_times, rotation=15, horizontalalignment='right')
 
-# Add margins to the bottom to show the labels
-plt.subplots_adjust(bottom=0.2)
+# Get rid of the space between the title and the first subplot
+fig.subplots_adjust(top=0.95)
 
-# Save the plot to a file, but big so it all shows up
-fig.savefig('facilitator_times.png', dpi=720)
+fig.suptitle('Facilitator Times - Number of CSP Solutions')
+
+# Save the plot to a file, but big and zoomed out so it's readable.
+fig.savefig('facilitator_times.png', dpi=300, bbox_inches='tight', pad_inches=0.05)
 
 plt.show()

@@ -4,6 +4,7 @@ Given we've chosen some discussion section times for our facilitators,
 iterate over each student and print which facilitator groups they can make.
 """
 
+import os
 import csv
 
 # Find whatever CSV file is in the local folder using list comprehension 
