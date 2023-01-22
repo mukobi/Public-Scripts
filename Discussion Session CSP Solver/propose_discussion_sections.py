@@ -10,7 +10,6 @@ import os
 import csv
 import functools
 from datetime import datetime
-from typing import Dict, List, Tuple
 
 from matplotlib import pyplot as plt
 
