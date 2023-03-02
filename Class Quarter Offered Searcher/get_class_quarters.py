@@ -6,7 +6,6 @@ and write them to the same CSV file for easier course scheduling.
 Overly specific to my format at https://docs.google.com/spreadsheets/d/1xBFkjG0QsqiVO62wHE0PvM8uVODwG9SBvLIYkvkiPjo/edit
 """
 
-import os
 import csv
 import requests
 from bs4 import BeautifulSoup
@@ -35,6 +34,11 @@ input_data = input_data[1:]
 # Debug: Only do a few rows
 # input_data = input_data[450:]
 
+# Store the UG-reqs requirements as a dictionary to print at the end
+# E.g. {'WAY-AQR': ['ENGR 76', ...], ...}
+# Don't write them to the file so the user can pick which ones are important or not.
+all_ug_reqs = {}
+
 # For each row
 for row in tqdm(input_data):
     # Get the class name
@@ -45,7 +49,7 @@ for row in tqdm(input_data):
 
     # Get the class quarters
     url = 'https://explorecourses.stanford.edu/print?filter-term-Winter=on&filter-term-Autumn=on&filter-term-Spring=on&filter-coursestatus-Active=on&q=' + class_name_nospace
-    response = requests.get(url)
+    response = requests.get(url, timeout=1000)
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Find the .searchResult that contains `<span class="courseNumber">{class_name}:</span>`
@@ -80,10 +84,29 @@ for row in tqdm(input_data):
         else:
             row[term_name] = 'FALSE'
 
+    # Get the UG Requirements (text between 'UG Reqs:' and '\n')
+    ug_reqs_string = search_result.find('div', {'class': 'courseAttributes'}).text  # type: ignore
+    ug_reqs_string = ug_reqs_string.split('UG Reqs:')
+    if len(ug_reqs_string) > 1:
+        ug_reqs_string = ug_reqs_string[1].split('\r')[0].strip()
+        ug_reqs_for_this_class = ug_reqs_string.split(', ')
+
+        # Add class to dictionary for each UG req
+        for ug_req in ug_reqs_for_this_class:
+            if ug_req not in all_ug_reqs:
+                all_ug_reqs[ug_req] = []
+            all_ug_reqs[ug_req].append(class_name)
+
 
 # Write the output file
-with open(INPUT_FILE, 'w', newline='\n') as file:
+with open(INPUT_FILE, 'w', newline='\n', encoding='utf-8') as file:
     writer = csv.DictWriter(file, fieldnames=input_data[0].keys())
     writer.writeheader()
     for row in input_data:
         writer.writerow(row)
+
+# Alphabetize and print the UG requirements
+print('### Requirements Satisfied by Courses ###\n')
+for req_name, req_classes in sorted(all_ug_reqs.items()):
+    classes_string = "\n".join(sorted(req_classes))
+    print(f'## {req_name} ({len(req_classes)}) ##\n{classes_string}\n')
