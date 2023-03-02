@@ -6,6 +6,7 @@ and write them to the same CSV file for easier course scheduling.
 Overly specific to my format at https://docs.google.com/spreadsheets/d/1xBFkjG0QsqiVO62wHE0PvM8uVODwG9SBvLIYkvkiPjo/edit
 """
 
+import os
 import csv
 import requests
 from bs4 import BeautifulSoup
@@ -18,9 +19,12 @@ from tqdm import tqdm
 INPUT_FILE = input('Enter the path of a CSV file...\n')
 # INPUT_FILE = './Classes I Want To Take - Gabe Mukobi - Classes.csv'
 
+# Format filename to avoid invalid arguments (e.g. \\ on Windows, remove quotes)
+INPUT_FILE = INPUT_FILE.replace('\\', '/').replace('"', '').replace("'", '')
+
 # Load in CSV data
 input_data = []
-with open(INPUT_FILE, 'r') as file:
+with open(INPUT_FILE, 'r', encoding='utf-8') as file:
     # Read the CSV data into a list of dictionaries
     reader = csv.DictReader(file)
     input_data = list(reader)
