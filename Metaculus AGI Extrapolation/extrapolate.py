@@ -108,7 +108,7 @@ plt.legend([
     'AGI extrapolations (when the\nMetaculus prediction = the actual\nyear at the observed update rate))',
 ])
 
-plt.ylim(bottom=2020, top=2070)
+plt.ylim(bottom=2020, top=2065)
 g.tick_params('x', rotation=30)
 plt.xlabel('Prediction Dates')
 plt.ylabel('Predicted Date of AGI')
