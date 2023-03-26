@@ -2,6 +2,8 @@
 Loads Metaculus predictions for "When will (Strong) AGI be achieved?" and
 extrapolates out to estimate what they'll update down to.
 
+https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/
+
 Code originally by Rylan Schaeffer.
 """
 
