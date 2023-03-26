@@ -1,0 +1,405 @@
+[{
+        "date_of_prediction": "2020-10-08T00:50:35.365Z",
+        "agi_prediction": 2063.9452
+    },
+    {
+        "date_of_prediction": "2020-10-18T17:33:15.175Z",
+        "agi_prediction": 2049.52
+    },
+    {
+        "date_of_prediction": "2020-10-27T19:18:10.881Z",
+        "agi_prediction": 2048.71
+    },
+    {
+        "date_of_prediction": "2020-11-04T23:32:41.312Z",
+        "agi_prediction": 2050.5334
+    },
+    {
+        "date_of_prediction": "2020-11-13T17:37:20.196Z",
+        "agi_prediction": 2049.7198
+    },
+    {
+        "date_of_prediction": "2020-11-19T17:55:09.794Z",
+        "agi_prediction": 2047.2826
+    },
+    {
+        "date_of_prediction": "2020-12-05T04:44:51.980Z",
+        "agi_prediction": 2047.3816
+    },
+    {
+        "date_of_prediction": "2020-12-12T00:26:25.290Z",
+        "agi_prediction": 2047.3816
+    },
+    {
+        "date_of_prediction": "2020-12-21T03:40:59.649Z",
+        "agi_prediction": 2049.151
+    },
+    {
+        "date_of_prediction": "2020-12-27T16:16:40.583Z",
+        "agi_prediction": 2045.281
+    },
+    {
+        "date_of_prediction": "2021-01-04T22:43:11.283Z",
+        "agi_prediction": 2044.1812
+    },
+    {
+        "date_of_prediction": "2021-01-11T06:56:28.838Z",
+        "agi_prediction": 2045.0992
+    },
+    {
+        "date_of_prediction": "2021-01-21T20:27:49.175Z",
+        "agi_prediction": 2045.587
+    },
+    {
+        "date_of_prediction": "2021-01-31T20:32:37.778Z",
+        "agi_prediction": 2048.206
+    },
+    {
+        "date_of_prediction": "2021-02-10T04:22:36.733Z",
+        "agi_prediction": 2047.4986
+    },
+    {
+        "date_of_prediction": "2021-02-12T03:41:55.227Z",
+        "agi_prediction": 2047.8172
+    },
+    {
+        "date_of_prediction": "2021-03-05T17:52:32.917Z",
+        "agi_prediction": 2046.2044
+    },
+    {
+        "date_of_prediction": "2021-03-10T09:52:32.378Z",
+        "agi_prediction": 2045.9884
+    },
+    {
+        "date_of_prediction": "2021-03-28T17:24:54.189Z",
+        "agi_prediction": 2046.9442
+    },
+    {
+        "date_of_prediction": "2021-04-08T00:36:25.172Z",
+        "agi_prediction": 2046.8974
+    },
+    {
+        "date_of_prediction": "2021-04-15T02:00:32.247Z",
+        "agi_prediction": 2046.9388
+    },
+    {
+        "date_of_prediction": "2021-04-23T08:26:37.105Z",
+        "agi_prediction": 2049.2248
+    },
+    {
+        "date_of_prediction": "2021-05-03T21:45:16.889Z",
+        "agi_prediction": 2051.3434
+    },
+    {
+        "date_of_prediction": "2021-05-12T04:12:56.005Z",
+        "agi_prediction": 2049.9322
+    },
+    {
+        "date_of_prediction": "2021-05-19T19:32:23.051Z",
+        "agi_prediction": 2051.2246
+    },
+    {
+        "date_of_prediction": "2021-05-29T05:49:55.554Z",
+        "agi_prediction": 2046.2386
+    },
+    {
+        "date_of_prediction": "2021-06-05T21:43:19.616Z",
+        "agi_prediction": 2047.081
+    },
+    {
+        "date_of_prediction": "2021-06-13T00:24:40.890Z",
+        "agi_prediction": 2049.511
+    },
+    {
+        "date_of_prediction": "2021-06-17T20:31:47.370Z",
+        "agi_prediction": 2050.8718
+    },
+    {
+        "date_of_prediction": "2021-06-25T05:36:44.250Z",
+        "agi_prediction": 2051.6782
+    },
+    {
+        "date_of_prediction": "2021-07-09T14:19:29.975Z",
+        "agi_prediction": 2051.8402
+    },
+    {
+        "date_of_prediction": "2021-07-14T17:42:46.497Z",
+        "agi_prediction": 2052.0148
+    },
+    {
+        "date_of_prediction": "2021-07-26T07:54:02.933Z",
+        "agi_prediction": 2053.0246
+    },
+    {
+        "date_of_prediction": "2021-08-03T16:41:17.999Z",
+        "agi_prediction": 2055.9388
+    },
+    {
+        "date_of_prediction": "2021-08-09T12:40:21.686Z",
+        "agi_prediction": 2054.8966
+    },
+    {
+        "date_of_prediction": "2021-08-25T21:15:58.165Z",
+        "agi_prediction": 2054.5078
+    },
+    {
+        "date_of_prediction": "2021-09-08T16:35:56.097Z",
+        "agi_prediction": 2054.9416
+    },
+    {
+        "date_of_prediction": "2021-09-16T16:40:29.726Z",
+        "agi_prediction": 2055.4906
+    },
+    {
+        "date_of_prediction": "2021-09-26T01:30:19.151Z",
+        "agi_prediction": 2053.759
+    },
+    {
+        "date_of_prediction": "2021-11-01T20:22:06.288Z",
+        "agi_prediction": 2053.1002
+    },
+    {
+        "date_of_prediction": "2021-11-09T21:10:12.252Z",
+        "agi_prediction": 2053.9156
+    },
+    {
+        "date_of_prediction": "2021-11-14T12:45:26.705Z",
+        "agi_prediction": 2052.8374
+    },
+    {
+        "date_of_prediction": "2021-12-06T17:28:24.774Z",
+        "agi_prediction": 2052.2488
+    },
+    {
+        "date_of_prediction": "2021-12-08T06:24:22.671Z",
+        "agi_prediction": 2052.3802
+    },
+    {
+        "date_of_prediction": "2021-12-31T09:47:11.714Z",
+        "agi_prediction": 2051.6296
+    },
+    {
+        "date_of_prediction": "2022-01-08T00:19:35.026Z",
+        "agi_prediction": 2054.8444
+    },
+    {
+        "date_of_prediction": "2022-01-13T01:55:47.903Z",
+        "agi_prediction": 2052.9004
+    },
+    {
+        "date_of_prediction": "2022-01-23T07:53:16.999Z",
+        "agi_prediction": 2052.373
+    },
+    {
+        "date_of_prediction": "2022-01-31T22:22:33.318Z",
+        "agi_prediction": 2058.781
+    },
+    {
+        "date_of_prediction": "2022-02-09T15:51:14.831Z",
+        "agi_prediction": 2056.6264
+    },
+    {
+        "date_of_prediction": "2022-02-19T15:13:27.223Z",
+        "agi_prediction": 2054.7148
+    },
+    {
+        "date_of_prediction": "2022-02-25T05:16:36.836Z",
+        "agi_prediction": 2055.406
+    },
+    {
+        "date_of_prediction": "2022-03-05T16:28:59.323Z",
+        "agi_prediction": 2053.3486
+    },
+    {
+        "date_of_prediction": "2022-03-13T09:44:17.480Z",
+        "agi_prediction": 2057.8684
+    },
+    {
+        "date_of_prediction": "2022-03-19T04:20:47.408Z",
+        "agi_prediction": 2055.7984
+    },
+    {
+        "date_of_prediction": "2022-03-25T23:43:46.402Z",
+        "agi_prediction": 2057.0674
+    },
+    {
+        "date_of_prediction": "2022-03-31T16:21:27.870Z",
+        "agi_prediction": 2056.5976
+    },
+    {
+        "date_of_prediction": "2022-04-08T09:16:12.449Z",
+        "agi_prediction": 2053.813
+    },
+    {
+        "date_of_prediction": "2022-04-12T21:43:44.129Z",
+        "agi_prediction": 2050.3174
+    },
+    {
+        "date_of_prediction": "2022-04-20T02:41:15.926Z",
+        "agi_prediction": 2045.1316
+    },
+    {
+        "date_of_prediction": "2022-05-01T06:14:58.341Z",
+        "agi_prediction": 2045.3044
+    },
+    {
+        "date_of_prediction": "2022-05-07T14:19:38.598Z",
+        "agi_prediction": 2048.7622
+    },
+    {
+        "date_of_prediction": "2022-05-16T23:58:24.210Z",
+        "agi_prediction": 2034.3532
+    },
+    {
+        "date_of_prediction": "2022-05-24T11:47:56.729Z",
+        "agi_prediction": 2039.53
+    },
+    {
+        "date_of_prediction": "2022-06-01T07:19:09.388Z",
+        "agi_prediction": 2039.7226
+    },
+    {
+        "date_of_prediction": "2022-06-12T05:17:43.695Z",
+        "agi_prediction": 2039.0224
+    },
+    {
+        "date_of_prediction": "2022-06-21T21:50:51.716Z",
+        "agi_prediction": 2038.297
+    },
+    {
+        "date_of_prediction": "2022-07-03T03:43:04.563Z",
+        "agi_prediction": 2035.9408
+    },
+    {
+        "date_of_prediction": "2022-07-09T08:32:02.707Z",
+        "agi_prediction": 2035.9012
+    },
+    {
+        "date_of_prediction": "2022-07-15T21:25:47.844Z",
+        "agi_prediction": 2038.7956
+    },
+    {
+        "date_of_prediction": "2022-07-22T08:46:39.287Z",
+        "agi_prediction": 2040.385
+    },
+    {
+        "date_of_prediction": "2022-07-28T07:59:15.385Z",
+        "agi_prediction": 2039.6866
+    },
+    {
+        "date_of_prediction": "2022-08-03T23:50:00.917Z",
+        "agi_prediction": 2039.6326
+    },
+    {
+        "date_of_prediction": "2022-08-10T00:32:08.542Z",
+        "agi_prediction": 2042.2084
+    },
+    {
+        "date_of_prediction": "2022-08-16T10:24:21.725Z",
+        "agi_prediction": 2042.8312
+    },
+    {
+        "date_of_prediction": "2022-08-23T12:55:34.916Z",
+        "agi_prediction": 2042.7664
+    },
+    {
+        "date_of_prediction": "2022-08-30T04:31:52.537Z",
+        "agi_prediction": 2041.3138
+    },
+    {
+        "date_of_prediction": "2022-09-05T02:46:34.857Z",
+        "agi_prediction": 2043.013
+    },
+    {
+        "date_of_prediction": "2022-09-16T01:37:50.547Z",
+        "agi_prediction": 2042.6818
+    },
+    {
+        "date_of_prediction": "2022-09-22T17:15:13.464Z",
+        "agi_prediction": 2042.3578
+    },
+    {
+        "date_of_prediction": "2022-09-29T10:16:21.555Z",
+        "agi_prediction": 2041.2364
+    },
+    {
+        "date_of_prediction": "2022-10-07T04:42:28.507Z",
+        "agi_prediction": 2039.926
+    },
+    {
+        "date_of_prediction": "2022-10-13T05:51:33.538Z",
+        "agi_prediction": 2040.8368
+    },
+    {
+        "date_of_prediction": "2022-10-21T03:01:56.320Z",
+        "agi_prediction": 2040.4156
+    },
+    {
+        "date_of_prediction": "2022-10-28T02:54:56.507Z",
+        "agi_prediction": 2039.7676
+    },
+    {
+        "date_of_prediction": "2022-11-04T13:39:35.948Z",
+        "agi_prediction": 2040.5758
+    },
+    {
+        "date_of_prediction": "2022-11-11T14:02:53.557Z",
+        "agi_prediction": 2039.9602
+    },
+    {
+        "date_of_prediction": "2022-11-20T15:31:53.459Z",
+        "agi_prediction": 2038.3276
+    },
+    {
+        "date_of_prediction": "2022-11-29T17:38:24.358Z",
+        "agi_prediction": 2038.8694
+    },
+    {
+        "date_of_prediction": "2022-12-08T10:59:42.482Z",
+        "agi_prediction": 2038.2844
+    },
+    {
+        "date_of_prediction": "2022-12-18T03:17:16.989Z",
+        "agi_prediction": 2039.026
+    },
+    {
+        "date_of_prediction": "2022-12-27T21:15:01.723Z",
+        "agi_prediction": 2037.235
+    },
+    {
+        "date_of_prediction": "2023-01-06T22:15:30.848Z",
+        "agi_prediction": 2037.7282
+    },
+    {
+        "date_of_prediction": "2023-01-16T23:53:17.744Z",
+        "agi_prediction": 2038.8352
+    },
+    {
+        "date_of_prediction": "2023-01-27T12:23:04.401Z",
+        "agi_prediction": 2039.7964
+    },
+    {
+        "date_of_prediction": "2023-02-07T00:07:56.533Z",
+        "agi_prediction": 2040.2932
+    },
+    {
+        "date_of_prediction": "2023-02-17T20:55:37.961Z",
+        "agi_prediction": 2041.3714
+    },
+    {
+        "date_of_prediction": "2023-02-28T17:52:39.260Z",
+        "agi_prediction": 2039.2996
+    },
+    {
+        "date_of_prediction": "2023-03-11T19:40:13.865Z",
+        "agi_prediction": 2038.6804
+    },
+    {
+        "date_of_prediction": "2023-03-22T17:46:06.307Z",
+        "agi_prediction": 2035.0174
+    },
+    {
+        "date_of_prediction": "2023-03-26T02:21:17.511Z",
+        "agi_prediction": 2031.3778
+    }
+]
