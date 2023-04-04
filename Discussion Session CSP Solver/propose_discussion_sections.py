@@ -29,7 +29,13 @@ PRINT_SOLUTIONS = False
 
 
 # Find whatever CSV file is in the local folder using list comprehension
-INPUT_FILE = [f for f in os.listdir('.') if f.endswith('.csv')][0]
+INPUT_FILE = [f for f in os.listdir('.') if f.endswith('.csv')]
+if len(INPUT_FILE) == 1:
+    INPUT_FILE = INPUT_FILE[0]
+elif len(INPUT_FILE) == 0:
+    INPUT_FILE = input('Enter the path of the CSV file: ').strip().strip('"').strip("'")
+else:
+    raise ValueError(f"Multiple input files found:\n{INPUT_FILE}")
 
 # Read in data
 students = []
@@ -44,7 +50,11 @@ with open(INPUT_FILE, 'r', encoding='utf-8') as f:
             students.append((name, availability))
         elif role == 'Facilitator':
             # Duplicate the facilitator for each number of groups they can facilitate
-            num_groups = int(row['Chosen num sections'])
+            try:
+                num_groups = int(row['Chosen num sections'])
+            except ValueError as exc:
+                raise ValueError(
+                    f'Invalid number of groups for {name} (please enter manually): {row["Chosen num sections"]}') from exc
             for i in range(num_groups):
                 facilitators.append((f'{name} {i+1}', availability))
         else:
@@ -117,6 +127,10 @@ for solution in tqdm(problem.getSolutionIter(), total=est_num_solutions):
     # print(f'Found {len(solutions)} solutions! Progress: {len(solutions) / est_num_solutions * 100:.2f}%', end='\r')
 
 print(f'Found {len(solutions)} solutions!')
+
+if len(solutions) == 0:
+    print('No solutions found :(')
+    exit()
 
 if PRINT_SOLUTIONS:
     # Print solutions
