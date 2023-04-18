@@ -13,11 +13,10 @@ SORT_BY_AVAILABILITY_INSTEAD_OF_NAME = False
 
 # Lock in the facilitator times
 facilitator_times_and_group_names = {
-    ('Aaron Scher 1', 'Tu 4:30-5:50 PM', 'Yellow'),
-    ('Gabe Mukobi 1', 'Tu 3:00-4:20 PM', 'Red'),
-    ('Michael Byun', 'W 3:00-4:20 PM', 'Green'),
-    ('Aaron Scher 2', 'F 4:30-5:50 PM', 'Purple'),
-    ('Gabe Mukobi 2', 'Th 10:30-11:50 AM', 'Blue'),
+    ('Aaron Scher 1', 'Tu 3:00-4:20 PM', 'Red'),
+    ('Gabe Mukobi 1', 'W 4:30-5:50 PM', 'Yellow'),
+    ('Peter Chatain 1', 'Th 1:30-2:50 PM', 'Green'),
+    ('Aaron Scher 2', 'Th 4:30-5:50 PM', 'Blue'),
 }
 
 # Read in data
