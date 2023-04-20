@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 # Read the CSV data
 
-# INPUT_FILE = input('Enter the path of a CSV file...\n')
-INPUT_FILE = "C:/Users/Gabe/Downloads/Final Feedback Form-Everyone.csv"
+INPUT_FILE = input('Enter the path of a CSV file...\n')
+# INPUT_FILE = "C:/Users/Gabe/Downloads/Final Feedback Form-Everyone.csv"
 
 # Format filename to avoid invalid arguments (e.g. \\ on Windows, remove quotes)
 

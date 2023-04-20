@@ -5,8 +5,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Read the CSV data
-# INPUT_FILE = input('Enter the path of a CSV file...\n')
-INPUT_FILE = "C:/Users/Gabe/Documents/GitHub/Personal/Public-Scripts/IBAR Marginal Worth It Table Producer/SAIA Retreats (Attendees)-Worth it for Attendees .csv"
+INPUT_FILE = input('Enter the path of a CSV file...\n')
+# INPUT_FILE = "C:/Users/Gabe/Documents/GitHub/Personal/Public-Scripts/IBAR Marginal Worth It Table Producer/SAIA Retreats (Attendees)-Worth it for Attendees .csv"
 # Format filename to avoid invalid arguments (e.g. \\ on Windows, remove quotes)
 INPUT_FILE = INPUT_FILE.replace('\\', '/').replace('"', '').replace("'", '')
 
