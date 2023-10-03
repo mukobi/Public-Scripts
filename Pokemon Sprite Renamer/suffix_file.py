@@ -1,11 +1,10 @@
 """
-Appends a user-specified suffix to files in a folder and copies the renamed files to a new subfolder.
+Appends a user-specified suffix to files in a folder, copies the renamed files to a new subfolder.
 Useful for making Slack emojis.
 """
 
 import os
 import shutil
-import requests
 from tqdm import tqdm
 
 
@@ -42,7 +41,7 @@ def main():
                 os.path.join(folder_path, filename),
                 os.path.join(subfolder_path, new_filename),
             )
-        except Exception as exc:
+        except Exception as exc:  # pylint: disable=broad-except
             tqdm.write(f"Error processing file {filename}: {exc}")
 
     print("Done suffixing files.")
