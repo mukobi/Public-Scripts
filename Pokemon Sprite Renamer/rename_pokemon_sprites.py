@@ -21,7 +21,7 @@ def get_pokemon_name(index):
     Returns:
         str: The name of the Pokemon.
     """
-    response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{index}")
+    response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{index}", timeout=5)
     return response.json()["name"]
 
 
@@ -43,7 +43,6 @@ def main():
 
     os.makedirs(subfolder_path, exist_ok=True)
 
-
     # Get list of files in the folder
     files = [f for f in os.listdir(folder_path) if f != "renamed_pokemon"]
 
@@ -64,7 +63,10 @@ def main():
             new_filename += f"-{suffix}{extension}"
 
             # Copy the file to the subfolder with the new name
-            shutil.copy(os.path.join(folder_path, filename), os.path.join(subfolder_path, new_filename))
+            shutil.copy(
+                os.path.join(folder_path, filename),
+                os.path.join(subfolder_path, new_filename),
+            )
         except Exception as exc:
             tqdm.write(f"Error processing file {filename}: {exc}")
 
