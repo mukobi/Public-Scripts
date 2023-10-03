@@ -252,6 +252,9 @@ for i, (facilitator_name, times) in enumerate(facilitator_solution_times):
 fig.align_xlabels()
 plt.xticks(unique_times, rotation=15, horizontalalignment="right")
 
+# Log-y
+plt.yscale("log")
+
 # Get rid of the space between the title and the first subplot
 fig.subplots_adjust(top=0.95)
 
