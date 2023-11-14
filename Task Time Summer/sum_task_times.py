@@ -33,8 +33,8 @@ def main() -> None:
     total = 0
     print("\nCumulative hours:")
     for task in tasks:
-        hours, task = task.split(" ", 1)
         try:
+            hours, task = task.split(" ", 1)
             total += float(hours)
             print(f"{total} {task}")
         except ValueError:
