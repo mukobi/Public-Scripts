@@ -45,6 +45,7 @@ Write-Host "[+] Chocolatey update complete." -ForegroundColor Green
 Install-ChocoPackage "googledrive"
 Install-ChocoPackage "7zip"
 Install-ChocoPackage "slack"
+Install-ChocoPackage "dotnet-all"
 Install-ChocoPackage "git"
 Install-ChocoPackage "github-desktop"
 Install-ChocoPackage "vscode-insiders"
@@ -79,6 +80,7 @@ Install-ChocoPackage "calibre"
 Install-ChocoPackage "signal"
 Install-ChocoPackage "whatsapp"
 Install-ChocoPackage "toggl"
+Install-ChocoPackage "drawio"
 
 
 
