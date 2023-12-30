@@ -60,7 +60,7 @@ Install-ChocoPackage "nvidia-broadcast"
 Install-ChocoPackage "razer-synapse-3"
 Install-ChocoPackage "vcredist140"
 Install-ChocoPackage "vcredist2015"
-Install-ChocoPackage "pomodoroschedulenotifier"
+Install-ChocoPackage "pomodoro-schedule-notifier"
 Install-ChocoPackage "steam"
 Install-ChocoPackage "zoom"
 Install-ChocoPackage "discord"
@@ -83,7 +83,6 @@ Install-ChocoPackage "toggl"
 Install-ChocoPackage "drawio"
 Install-ChocoPackage "screentogif"
 Install-ChocoPackage "logitech-camera-settings"
-
 
 
 # Setting PowerShell Execution Policy for scripts
