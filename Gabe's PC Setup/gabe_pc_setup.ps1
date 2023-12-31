@@ -137,49 +137,5 @@ foreach ($subDir in $githubSubDirs) {
 }
 Write-Host "[+] GitHub folders created." -ForegroundColor Green
 
-# Add some folders to Explorer Quick Access
-$quickAccessFolders = @(
-    "G:\My Drive\Media\Text\Papers",
-    "G:\My Drive\Media",
-    "G:\My Drive\Media\Pictures\Virtual Backgrounds",
-    "G:\Shared drives\SAIA Leadership\Graphic Designs, Images"
-)
-
-foreach ($folder in $quickAccessFolders) {
-    # Write an empty folder with a title saying how to pin it to Quick Access
-    $instructionFolderName = Join-Path $folder "# Pin to Quick Access with ··· Above ↑"
-
-    # Check if the instruction folder already exists and create it if not
-    if (-not (Test-Path $instructionFolderName)) {
-        New-Item -ItemType Directory -Path $instructionFolderName
-    }
-
-    # Set up a timer to delete the directory after a certain interval (e.g., 3000 milliseconds)
-    $timer = New-Object System.Timers.Timer
-    $timer.Interval = 3000
-    $timer.AutoReset = $false
-
-    # Generate a unique event identifier
-    $eventIdentifier = [Guid]::NewGuid().ToString()
-
-    # Timer Elapsed Event
-    # TODO this doesn't correctly delete the folder, I don't think it's passed correctly
-    $timerElapsedEvent = {
-        param($source, $e, $folderName)
-        Remove-Item -Path $e.SignalTime -Force -Recurse
-        Write-Host "[+] Directory deleted: $($e.MessageData)" -ForegroundColor Green
-        Unregister-Event -SourceIdentifier $e.SignalTime
-    }
-
-    # Register the event and start the timer
-    Register-ObjectEvent -InputObject $timer -EventName Elapsed -SourceIdentifier $eventIdentifier -Action $timerElapsedEvent -MessageData $instructionFolderName
-    $timer.Start()
-
-    # Open the folder
-    # Invoke-Item $folder
-}
-
-Write-Host "[+] Folders added to Quick Access." -ForegroundColor Green
-
 # End of script
 Write-Host "[=] Setup Script Execution Complete!" -ForegroundColor DarkMagenta
