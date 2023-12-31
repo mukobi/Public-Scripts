@@ -1,4 +1,5 @@
 # PowerShell Setup Script for Windows 11
+# Installs Chocolatey, many packages using Chocolatey, Oh My Posh, and Anaconda
 
 # NOTE - To first allow executing this script, run the following:
 # Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -83,6 +84,7 @@ Install-ChocoPackage "toggl"
 Install-ChocoPackage "drawio"
 Install-ChocoPackage "screentogif"
 Install-ChocoPackage "logitech-camera-settings"
+Install-ChocoPackage "hwinfo"
 
 
 # Setting PowerShell Execution Policy for scripts
