@@ -80,7 +80,7 @@ Install-ChocoPackage "everything"
 Install-ChocoPackage "calibre"
 Install-ChocoPackage "signal"
 Install-ChocoPackage "whatsapp"
-Install-ChocoPackage "toggl"
+# Install-ChocoPackage "toggl" # Deprecated version
 Install-ChocoPackage "drawio"
 Install-ChocoPackage "screentogif"
 Install-ChocoPackage "logitech-camera-settings"
