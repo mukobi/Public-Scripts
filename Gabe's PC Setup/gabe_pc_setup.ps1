@@ -46,7 +46,6 @@ Write-Host "[+] Chocolatey update complete." -ForegroundColor Green
 Install-ChocoPackage "googledrive"
 Install-ChocoPackage "7zip"
 Install-ChocoPackage "slack"
-Install-ChocoPackage "dotnet-all"
 Install-ChocoPackage "git"
 Install-ChocoPackage "github-desktop"
 Install-ChocoPackage "vscode-insiders"
@@ -85,6 +84,7 @@ Install-ChocoPackage "drawio"
 Install-ChocoPackage "screentogif"
 Install-ChocoPackage "logitech-camera-settings"
 Install-ChocoPackage "hwinfo"
+Install-ChocoPackage "dotnet-all"
 
 
 # Setting PowerShell Execution Policy for scripts
