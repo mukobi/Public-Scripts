@@ -137,5 +137,10 @@ foreach ($subDir in $githubSubDirs) {
 }
 Write-Host "[+] GitHub folders created." -ForegroundColor Green
 
+# Open Windows Update
+Write-Host "[ ] Opening Windows Update..." -ForegroundColor Yellow
+start ms-settings:windowsupdate
+Write-Host "[+] Windows Update opened." -ForegroundColor Green
+
 # End of script
 Write-Host "[=] Setup Script Execution Complete!" -ForegroundColor DarkMagenta
