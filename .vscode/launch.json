@@ -11,7 +11,7 @@
             "program": "${file}",
             "cwd": "${fileDirname}",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": false,
         }
     ]
 }

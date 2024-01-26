@@ -7,7 +7,7 @@ iterate over each student and print which facilitator groups they can make.
 import os
 import csv
 
-SORT_BY_AVAILABILITY_INSTEAD_OF_NAME = False
+SORT_BY_AVAILABILITY_INSTEAD_OF_NAME = True
 
 # Find whatever CSV file is in the local folder using list comprehension
 # INPUT_FILE = [f for f in os.listdir(".") if f.endswith(".csv")][0]
@@ -23,9 +23,7 @@ else:
 # Lock in the facilitator times
 facilitator_times_and_group_names = {
     ("Peter Gebauer 1", "Tu 4:30-5:50 PM", "Red"),
-    ("Gabriel Mukobi 1", "W 1:30-2:50 PM", "Yellow"),
-    ("Scott Viteri 1", "Th 1:30-2:50 PM", "Green"),
-    ("Peter Gebauer 2", "F 3:00-4:20 PM", "Blue"),
+    ("Scott Viteri 1", "F 10:30-11:50 AM", "Blue"),
 }
 # Print the names of each section
 print("Facilitator times:")
