@@ -117,6 +117,8 @@ Write-Host "[+] PowerShell profile script copied." -ForegroundColor Green
 
 # Setting up Anaconda environment
 Write-Host "[ ] Setting up Anaconda environment 'ais'..." -ForegroundColor Yellow
+& conda update conda -y
+& conda init powershell
 & conda create --name ais python=3.11 -y
 & conda activate ais
 & conda install numpy pandas scikit-learn scikit-learn-intelex matplotlib seaborn requests tqdm beautifulsoup4 -y
