@@ -1,0 +1,40 @@
+# Note: paths of executables that should be excluded from running on the GPU to save battery
+
+C:/Program Files (x86)/Microsoft/Edge/Application/
+msedge.exe
+
+C:/Program Files/NVIDIA Corporation/NVIDIA GeForce Experience/
+NVIDIA Share.exe
+
+C:/Program Files/PowerToys/
+PowerToys.ColorPickerUI.exe
+
+C:/Program Files/PowerToys/
+PowerToys.PowerLauncher.exe
+
+C:/Program Files/Slack/app-4.36.136/
+Slack.exe
+
+C:/Program Files/WindowsApps/5319275A.WhatsAppDesktop_2.2401.5.0_x64__cv1g1gvanyjgm/
+WhatsApp.exe
+
+C:/Program Files/Zoom/bin/
+Zoom.exe
+
+C:\Users\Gabe\AppData\Local\Discord\app-1.0.9033
+Discord.exe
+
+C:/Users/Gabe/AppData/Local/TogglTrack/app-9.6.0/
+TogglTrack.exe
+
+C:/Windows/SystemApps/Microsoft.LockApp_cw5n1h2txyewy/
+LockApp.exe
+
+C:/Windows/SystemApps/Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy/
+StartMenuExperienceHost.exe
+
+C:/Windows/SystemApps/MicrosoftWindows.Client.CBS_cw5n1h2txyewy/
+SearchHost.exe
+
+C:/Windows/SystemApps/MicrosoftWindows.Client.CBS_cw5n1h2txyewy/
+TextInputHost.exe
