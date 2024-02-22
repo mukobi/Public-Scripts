@@ -133,3 +133,6 @@ dmypy.json
 
 # Data
 *.csv
+
+# Local ignore folder
+_local_ignore/
